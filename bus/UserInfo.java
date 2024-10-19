@@ -27,20 +27,20 @@ public class UserInfo{
 	        }
 	     }	
 	}
-	public static void activity(int userId){
+	public static void activity(int userId)throws SQLException{
 		boolean b=true;
 		while(b){
 			System.out.println("1.Book a Ticket\n2.View Booking Details\n3.Cancel Ticket\n4.Edit User Info\n5.Exit\nEnter your choice:");
 			int choice=ob.nextInt();
 			switch(choice){
 				case 1:
-					//UserHelper.book(userId);
+					BookingHelper.bookTicket(userId);
 					break;
 				case 2:
-					//UserHelper.viewTicket(userId);
+					UserHelper.viewTicket(userId);
 					break;
 				case 3:
-					//UserHelper.cancelTicket(userId);
+					UserHelper.cancelTicket(userId);
 					break;
 				case 4:
 					UserHelper.updateUser(userId);
